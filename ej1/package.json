@@ -1,0 +1,16 @@
+{
+  "name": "26express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ej1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ej1.js",
+    "dev":"nodemon ej1.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
