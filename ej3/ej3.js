@@ -22,7 +22,7 @@ const JSON =
 }
 
 app.get("/",(req,res)=>{
-    res.send(JSON)
+    res.send(JSON.items)
 })
 
 //Crear endpoint para poder crear un producto nuevo
@@ -44,11 +44,10 @@ app.put("/:id", (req, res) => {
     const found = JSON.items.some((item) => item.id === +req.params.id);
     if (found) {
       JSON.items.forEach((item) => {
-        if (+req.params.id === item.id) {
-          item.nombre = req.body.nombre;
-          item.precio = req.body.precio;
-          res.send(item);
-        }
+        item.id = +req.params.id;
+        item.nombre = req.body.nombre;
+        item.precio = req.body.precio;
+        res.send(item);
       });
     } else {
       res.status(404).send(`Product with id ${req.params.id} not found`);
