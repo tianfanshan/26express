@@ -68,17 +68,17 @@ app.delete('/:id',(req,res)=>{
 
 
 //Crear filtro por precio de producto
-// app.get('/:precio',(req,res)=>{
-//   const found2 = JSON.items.some(item=>item.precio > +req.params.precio)
-//   console.log(found2)
-//   if(found2){
-//     const filtrarPrecio = JSON.items.filter(item => item.precio > +req.params.precio)
-//     console.log(filtrarPrecio)
-//     res.send(filtrarPrecio)
-//   }else{
-//     res.status(404).send(`el precio ${+req.params.precio} esta muy alto`)
-//   }
-// })
+app.get('/precio:precio',(req,res)=>{
+  const found2 = JSON.items.some(item=>item.precio > +req.params.precio)
+  console.log(found2)
+  if(found2){
+    const filtrarPrecio = JSON.items.filter(item => item.precio > +req.params.precio)
+    console.log(filtrarPrecio)
+    res.send(filtrarPrecio)
+  }else{
+    res.status(404).send(`el precio ${+req.params.precio} esta muy alto`)
+  }
+})
 
 
 //Crear filtro que muestre los productos con un precio entre 50 y 250.
